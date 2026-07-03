@@ -1,0 +1,253 @@
+<!-- <!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Medical Health Diagnosis</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:linear-gradient(135deg,#0d6efd,#20c997);min-height:100vh}
+nav{padding:18px 40px;color:#fff;font-size:26px;font-weight:bold}
+.container{max-width:950px;margin:30px auto;background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border-radius:20px;padding:35px;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+h1,p{text-align:center;color:#fff}
+form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:25px}
+label{color:#fff;font-weight:bold}
+.field{display:flex;flex-direction:column}
+input,select{padding:12px;border:none;border-radius:10px;font-size:15px}
+button{grid-column:1/-1;padding:15px;border:none;border-radius:30px;background:#fff;color:#0d6efd;font-size:18px;font-weight:bold;cursor:pointer}
+button:hover{background:#e8f1ff}
+@media(max-width:768px){form{grid-template-columns:1fr}}
+</style></head>
+<body>
+<nav><i class="fa-solid fa-heart-pulse"></i> Medical Disease Prediction</nav>
+<div class="container">
+<h1>Medical Health Diagnosis</h1>
+<p>Fill in your details to predict possible disease.</p>
+<form action="/predict" method="POST">
+<div class="field"><label>Full Name</label><input name="name" required></div>
+<div class="field"><label>Age</label><input type="number" name="Age" required></div>
+<div class="field"><label>Gender</label><select name="Gender"><option>Male</option><option>Female</option><option>Other</option></select></div>
+<div class="field"><label>Smoking</label><select name="Smoking"><option>No</option><option>Yes</option></select></div>
+<div class="field"><label>Alcohol</label><select name="Alcohol"><option>No</option><option>Yes</option></select></div>
+<div class="field"><label>Physical Activity</label><select name="PhysicalActivity"><option>Low</option><option>Moderate</option><option>High</option></select></div>
+<div class="field"><label>Family History</label><select name="FamilyHistory"><option>No</option><option>Yes</option></select></div>
+<div class="field"><label>BMI</label><input type="number" step="0.1" name="BMI"></div>
+<div class="field"><label>Blood Pressure</label><input type="number" name="BloodPressure"></div>
+<div class="field"><label>Glucose Level</label><input type="number" name="GlucoseLevel"></div>
+<div class="field"><label>Cholesterol</label><input type="number" name="Cholesterol"></div>
+<div class="field"><label>Heart Rate</label><input type="number" name="HeartRate"></div>
+<button type="submit">Predict Disease</button>
+</form></div></body></html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Health Diagnosis</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0d6efd,#20c997);
+    min-height:100vh;
+}
+
+nav{
+    padding:18px 40px;
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:950px;
+    margin:30px auto;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+h1,p{
+    text-align:center;
+    color:#fff;
+}
+
+form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:25px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    color:white;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input,
+select{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+}
+
+button{
+    grid-column:1/-1;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#0d6efd;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#e8f1ff;
+}
+
+@media(max-width:768px){
+
+form{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<i class="fa-solid fa-heart-pulse"></i>
+Medical Disease Prediction
+
+</nav>
+
+<div class="container">
+
+<h1>Medical Health Diagnosis</h1>
+
+<p>Fill in your details to predict possible disease.</p>
+
+<form action="/predict" method="POST">
+
+<div class="field">
+<label>Full Name</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="field">
+<label>Age</label>
+<input type="number" name="Age" min="1" max="120" required>
+</div>
+
+<div class="field">
+<label>Gender</label>
+<select name="Gender" required>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+</div>
+
+<div class="field">
+<label>Smoking</label>
+<select name="Smoking" required>
+<option value="No">No</option>
+<option value="Yes">Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label>Alcohol</label>
+<select name="Alcohol" required>
+<option value="No">No</option>
+<option value="Yes">Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label>Physical Activity</label>
+<select name="PhysicalActivity" required>
+<option value="Low">Low</option>
+<option value="Moderate">Moderate</option>
+<option value="High">High</option>
+</select>
+</div>
+
+<div class="field">
+<label>Family History</label>
+<select name="FamilyHistory" required>
+<option value="No">No</option>
+<option value="Yes">Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label>BMI</label>
+<input type="number" step="0.1" name="BMI" min="10" max="60" required>
+</div>
+
+<div class="field">
+<label>Blood Pressure</label>
+<input type="number" name="BloodPressure" min="50" max="250" required>
+</div>
+
+<div class="field">
+<label>Glucose Level</label>
+<input type="number" name="GlucoseLevel" min="50" max="500" required>
+</div>
+
+<div class="field">
+<label>Cholesterol</label>
+<input type="number" name="Cholesterol" min="50" max="500" required>
+</div>
+
+<div class="field">
+<label>Heart Rate</label>
+<input type="number" name="HeartRate" min="30" max="220" required>
+</div>
+
+<button type="submit">
+Predict Disease
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
